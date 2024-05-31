@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
 :root {
   /* background colors */
   --bg-primary: #fdf5de;
@@ -13,6 +15,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  font-family: "JetBrains Mono", monospace;
 }
 
 body {
@@ -22,4 +26,12 @@ body {
   background-color: var(--bg-primary);
   width: 100%;
   min-height: 100vh;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: var(--text-secondary);
+  text-decoration: inherit;
 }

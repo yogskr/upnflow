@@ -5,37 +5,39 @@ export default function Navbar() {
   const navigationMenu = [
     {
       id: "blog",
-      title: "Blog",
+      title: "BLOG",
       path: "/",
     },
     {
       id: "services",
-      title: "Services",
+      title: "SERVICES",
       path: "/services",
     },
     {
       id: "about",
-      title: "About",
+      title: "ABOUT",
       path: "/about",
     },
     {
       id: "contact",
-      title: "Contact",
+      title: "CONTACT",
       path: "/contact",
     },
   ];
 
   return (
     <nav className={styles.container}>
-      <h1 className={styles.logo}>upnflow</h1>
+      <h1 className={styles.logo}>
+        <Link href="/">UPNFLOW</Link>
+      </h1>
       <div className={styles.navLinks}>
-      {navigationMenu.map((link) => {
-        return (
-          <Link key={`${link.id}`} href={`${link.path}`}>
-            {link.title}
-          </Link>
-        );
-      })}
+        {navigationMenu.map((link) => {
+          return (
+            <Link key={`${link.id}`} href={`${link.path}`}>
+              {link.title}
+            </Link>
+          );
+        })}
       </div>
     </nav>
   );
