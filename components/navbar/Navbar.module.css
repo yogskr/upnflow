@@ -1,0 +1,17 @@
+.container {
+  background-color: var(--bg-secondary);
+  width: 35%;
+  min-height: 100vh;
+  padding: 1rem 2rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  color: var(--text-secondary);
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+}
