@@ -2,7 +2,7 @@
   background-color: var(--bg-secondary);
   width: 35%;
   min-height: 100vh;
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -10,6 +10,7 @@
 
 .logo {
   color: var(--text-secondary);
+  font-size: 2rem;
 }
 
 .navLinks {
@@ -17,4 +18,62 @@
   flex-direction: column;
   font-size: 4rem;
   font-weight: 800;
+  padding-bottom: 2rem;
+}
+
+.navLinks > a:hover {
+  color: var(--text-accent);
+}
+
+.separator {
+  border-top: 2px solid var(--text-secondary);
+  padding-top: 2rem;
+}
+
+.emailInput {
+  border: none;
+  padding: 0.7rem;
+  margin-right: 2rem;
+  font-size: 1.2rem;
+  outline: none;
+  background-color: var(--bg-primary);
+}
+
+.emailBtn {
+  border: none;
+  padding: 0.7rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.emailBtn:hover {
+  color: var(--text-accent);
+}
+
+/* Media Query Mobile */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .navLinks {
+    font-size: 3rem;
+  }
+
+  .emailInput,
+  .emailBtn {
+    font-size: 1rem;
+  }
+
+  .emailInput {
+    margin-right: 0;
+  }
 }

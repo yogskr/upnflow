@@ -30,8 +30,15 @@ body {
 
 a:link,
 a:visited,
-a:hover,
 a:active {
   color: var(--text-secondary);
   text-decoration: inherit;
+}
+
+/* Media Query Mobile */
+@media screen and (max-width: 768px) {
+  body {
+    display: block;
+    width: 100%;
+  }
 }

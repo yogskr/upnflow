@@ -4,16 +4,6 @@ import styles from "./Navbar.module.css";
 export default function Navbar() {
   const navigationMenu = [
     {
-      id: "blog",
-      title: "BLOG",
-      path: "/",
-    },
-    {
-      id: "services",
-      title: "SERVICES",
-      path: "/services",
-    },
-    {
       id: "about",
       title: "ABOUT",
       path: "/about",
@@ -23,6 +13,11 @@ export default function Navbar() {
       title: "CONTACT",
       path: "/contact",
     },
+    {
+      id: "services",
+      title: "SERVICES",
+      path: "/services",
+    },
   ];
 
   return (
@@ -30,14 +25,26 @@ export default function Navbar() {
       <h1 className={styles.logo}>
         <Link href="/">UPNFLOW</Link>
       </h1>
-      <div className={styles.navLinks}>
-        {navigationMenu.map((link) => {
-          return (
-            <Link key={`${link.id}`} href={`${link.path}`}>
-              {link.title}
-            </Link>
-          );
-        })}
+      <div>
+        <div className={styles.navLinks}>
+          {navigationMenu.map((link) => {
+            return (
+              <Link key={`${link.id}`} href={`${link.path}`}>
+                {link.title}
+              </Link>
+            );
+          })}
+        </div>
+        <form action="#" className={styles.separator}>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Your email address"
+            className={styles.emailInput}
+          />
+          <input type="button" value="Subscribe" className={styles.emailBtn} />
+        </form>
       </div>
     </nav>
   );
