@@ -1,19 +1,27 @@
-import { Noto_Sans } from "next/font/google" 
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 
-const notoSans = Noto_Sans({ subsets: ["latin"] });
+const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata = {
   title: "upnflow",
-  description: "Learn & Grow",
+  description: "learn & grow",
 };
 
 export default function RootLayout({ children }) {
+  let header = (
+    <header className="container">
+      <Navbar />
+    </header>
+  );
+
+  let footer = <footer></footer>;
+
   return (
     <html lang="en">
-      <body className={notoSans.className}>
-        <Navbar />
+      <body className={jetBrainsMono.className}>
+        {header}
         {children}
       </body>
     </html>
