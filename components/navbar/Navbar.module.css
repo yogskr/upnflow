@@ -1,16 +1,23 @@
 .container {
-  background-color: var(--bg-secondary);
-  width: 35%;
-  min-height: 100vh;
-  padding: 5rem;
+  min-height: inherit;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .logo {
-  color: var(--text-secondary);
-  font-size: 2rem;
+  color: var(--text-white);
+  font-size: 2.3rem;
+}
+
+.logo > a:hover {
+  color: var(--text-orange);
+  transition: all 0.4s ease-in-out;
+}
+
+.tagLine {
+  color: var(--bg-white);
 }
 
 .navLinks {
@@ -22,35 +29,38 @@
 }
 
 .navLinks > a:hover {
-  color: var(--text-accent);
+  color: var(--text-blue);
 }
 
-.separator {
-  border-top: 2px solid var(--text-secondary);
+.form {
+  border-top: 2px solid var(--text-white);
   padding-top: 2rem;
+  display: flex;
 }
 
 .emailInput {
   border: none;
-  padding: 0.7rem;
-  margin-right: 2rem;
+  padding: 0.5rem;
   font-size: 1.2rem;
   outline: none;
-  background-color: var(--bg-primary);
+  background-color: var(--bg-white);
+  width: 70%;
 }
 
 .emailBtn {
   border: none;
-  padding: 0.7rem;
+  padding: 0.5rem;
   font-size: 1.2rem;
   font-weight: 600;
   background-color: transparent;
-  color: var(--text-secondary);
+  color: var(--text-white);
   cursor: pointer;
+  width: 30%;
 }
 
 .emailBtn:hover {
-  color: var(--text-accent);
+  background-color: var(--bg-green);
+  transition: all 0.4s ease-in-out;
 }
 
 /* Media Query Mobile */

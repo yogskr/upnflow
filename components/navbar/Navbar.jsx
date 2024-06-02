@@ -1,30 +1,34 @@
 import Link from "next/link";
 import styles from "./Navbar.module.css";
+import { metadata } from "@/app/layout";
 
 export default function Navbar() {
   const navigationMenu = [
     {
       id: "about",
-      title: "ABOUT",
+      title: "about",
       path: "/about",
     },
     {
       id: "contact",
-      title: "CONTACT",
+      title: "contact",
       path: "/contact",
     },
     {
       id: "services",
-      title: "SERVICES",
+      title: "services",
       path: "/services",
     },
   ];
 
   return (
     <nav className={styles.container}>
-      <h1 className={styles.logo}>
-        <Link href="/">UPNFLOW</Link>
-      </h1>
+      <article>
+        <h1 className={styles.logo}>
+          <Link href="/">{metadata.title}</Link>
+        </h1>
+        <p className={styles.tagLine}>{metadata.description}</p>
+      </article>
       <div>
         <div className={styles.navLinks}>
           {navigationMenu.map((link) => {
@@ -35,15 +39,15 @@ export default function Navbar() {
             );
           })}
         </div>
-        <form action="#" className={styles.separator}>
+        <form action="#" className={styles.form}>
           <input
             type="email"
             name="email"
             id="email"
-            placeholder="Your email address"
+            placeholder="your email address"
             className={styles.emailInput}
           />
-          <input type="button" value="Subscribe" className={styles.emailBtn} />
+          <input type="button" value="subscribe" className={styles.emailBtn} />
         </form>
       </div>
     </nav>
