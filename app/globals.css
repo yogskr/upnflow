@@ -1,14 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
-
 :root {
   /* background colors */
-  --bg-primary: #fdf5de;
-  --bg-secondary: #272823;
+  --bg-white: #fdf5de;
+  --bg-black: #272823;
+  --bg-green: #76946a;
 
   /* text colors */
-  --text-primary: #272823;
-  --text-secondary: #fdf5de;
-  --text-accent: #4a718e;
+  --text-black: #272823;
+  --text-white: #fdf5de;
+  --text-blue: #4a718e;
+  --text-orange: #ffa066;
+  --text-red: #c34043;
 }
 
 * {
@@ -16,23 +17,32 @@
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: "JetBrains Mono", monospace;
 }
 
 body {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: var(--bg-primary);
-  width: 100%;
+  background-color: var(--bg-white);
+  width: auto;
+  min-height: 100vh;
+}
+
+.container {
+  position: fixed;
+  background-color: var(--bg-black);
+  width: 30rem;
   min-height: 100vh;
 }
 
 a:link,
 a:visited,
 a:active {
-  color: var(--text-secondary);
+  color: var(--text-white);
   text-decoration: inherit;
+}
+
+a:hover {
+  transition: all 0.4s ease-in-out;
 }
 
 /* Media Query Mobile */
