@@ -1,0 +1,54 @@
+.card {
+  border-bottom: 2px solid var(--text-gray);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.meta {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.excerpt {
+  margin: 1.5rem 0 1.5rem 0;
+}
+
+.readMore > a:visited,
+.author:visited {
+  color: var(--bg-black);
+}
+
+.readMore {
+  font-weight: 600;
+  align-self: flex-end;
+  display: flex;
+  gap: 10px;
+}
+
+.readMore > a:hover {
+  text-decoration: underline var(--text-orange);
+  color: var(--text-orange);
+  transition: all 0.4s ease-in-out;
+}
+
+.authorContainer,
+.dateContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.author {
+  font-weight: 600;
+}
+
+.author:hover {
+  text-decoration: underline var(--text-green);
+  color: var(--text-green);
+  transition: all 0.4s ease-in-out;
+}
