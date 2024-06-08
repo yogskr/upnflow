@@ -11,18 +11,25 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   let header = (
-    <header className="container">
+    <header className="headerContainer">
       <Navbar />
     </header>
   );
 
-  let footer = <footer></footer>;
+  let footer = (
+    <footer>
+      <p>©2024 upnflow</p>
+    </footer>
+  );
 
   return (
     <html lang="en">
       <body className={jetBrainsMono.className}>
         {header}
-        {children}
+        <section className="mainContent">
+          {children}
+          {footer}
+        </section>
       </body>
     </html>
   );
