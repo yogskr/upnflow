@@ -24,9 +24,9 @@ export default function Navbar() {
   return (
     <nav className={styles.container}>
       <article>
-        <h1 className={styles.logo}>
-          <Link href="/">{metadata.title}</Link>
-        </h1>
+        <Link href="/">
+          <h1 className={styles.logo}>{metadata.title}</h1>
+        </Link>
         <p className={styles.tagLine}>{metadata.description}</p>
       </article>
       <div>
