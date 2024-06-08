@@ -11,7 +11,7 @@
   font-size: 2.3rem;
 }
 
-.logo > a:hover {
+.logo:hover {
   color: var(--text-orange);
   transition: all 0.4s ease-in-out;
 }
@@ -26,6 +26,12 @@
   font-size: 4rem;
   font-weight: 800;
   padding-bottom: 2rem;
+}
+
+.navLinks > a:visited,
+.navLinks > a:active {
+  color: var(--text-white);
+  text-decoration: none;
 }
 
 .navLinks > a:hover {
