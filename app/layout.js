@@ -1,6 +1,7 @@
 import { Noto_Sans } from 'next/font/google';
 import './globals.css';
 import Navbar from '../components/navbar/Navbar';
+import SocialAccount from '../components/social/SocialAccount';
 
 const notoSans = Noto_Sans({ subsets: ['latin'] });
 
@@ -18,7 +19,8 @@ export default function RootLayout({ children }) {
 
   let footer = (
     <footer>
-      <p>©2024 upnflow</p>
+      <p>©{new Date().getFullYear()} upnflow</p>
+      <SocialAccount />
     </footer>
   );
 
