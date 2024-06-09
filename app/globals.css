@@ -45,15 +45,33 @@ li {
 
 /* Main Content -- Main Page and Footer */
 .mainContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3.7rem 5rem 3rem 5rem;
   margin-left: 30rem;
-  padding: 3rem 5rem 3rem 5rem;
   min-height: 100vh;
   font-size: 1.2rem;
   background-color: var(--text-white);
 }
 
+/* Footer */
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+footer p {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+}
+
 /* header */
-.headerContainer {
+header {
   position: fixed;
   background-color: var(--bg-black);
   width: 30rem;
