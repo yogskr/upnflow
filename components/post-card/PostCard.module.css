@@ -49,10 +49,6 @@
   gap: 0.5rem;
 }
 
-.author {
-  font-weight: 600;
-}
-
 .author:hover {
   text-decoration: underline var(--text-green);
   color: var(--text-green);
