@@ -1,32 +1,32 @@
-import Link from "next/link";
-import styles from "./Navbar.module.css";
-import { metadata } from "@/app/layout";
+import Link from 'next/link';
+import styles from './Navbar.module.css';
+import { metadata } from '../../app/layout';
 
 export default function Navbar() {
   const navigationMenu = [
     {
-      id: "about",
-      title: "about",
-      path: "/about",
+      id: 'about',
+      title: 'about',
+      path: '/about',
     },
     {
-      id: "contact",
-      title: "contact",
-      path: "/contact",
+      id: 'contact',
+      title: 'contact',
+      path: '/contact',
     },
     {
-      id: "services",
-      title: "services",
-      path: "/services",
+      id: 'services',
+      title: 'services',
+      path: '/services',
     },
   ];
 
   return (
     <nav className={styles.container}>
       <article>
-        <Link href="/">
-          <h1 className={styles.logo}>{metadata.title}</h1>
-        </Link>
+        <h1 className={styles.logo}>
+          <Link href="/">{metadata.title}</Link>
+        </h1>
         <p className={styles.tagLine}>{metadata.description}</p>
       </article>
       <div>
