@@ -6,7 +6,7 @@
   justify-content: space-between;
 }
 
-.logo {
+.logo > a {
   color: var(--text-white);
   font-size: 2.3rem;
 }
@@ -18,6 +18,8 @@
 
 .tagLine {
   color: var(--bg-white);
+  padding: 0;
+  margin: 0;
 }
 
 .navLinks {
