@@ -3,8 +3,11 @@ import path from 'path';
 import matter from 'gray-matter';
 
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import Button from '../../../components/Button';
+import { Suspense } from 'react';
 
+import styles from './page.module.css';
+
+// Get all blog posts
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join('blogs'));
 
@@ -15,6 +18,7 @@ export async function generateStaticParams() {
   return paths;
 }
 
+// Get blog post
 function getPost({ slug }) {
   const markdownFile = fs.readFileSync(
     path.join('blogs', slug + '.mdx'),
@@ -30,20 +34,22 @@ function getPost({ slug }) {
   };
 }
 
+// Render blog post
 export default function Post({ params }) {
   const props = getPost(params);
 
-  const components = {
-    Button,
-  };
+  const components = {};
 
   return (
-    <article>
-      <MDXRemote source={props.content} components={components} />
-    </article>
+    <Suspense fallback={<p>Loading blog post...</p>}>
+      <article className={styles.mdxContent}>
+        <MDXRemote source={props.content} components={components} />
+      </article>
+    </Suspense>
   );
 }
 
+// Get blog post metadata
 export async function generateMetadata({ params }) {
   const blog = getPost(params);
 
