@@ -1,0 +1,9 @@
+.mdxContent {
+  border-bottom: 2px solid var(--text-gray);
+  padding-bottom: 10rem;
+  margin-bottom: 2.2rem;
+}
+
+.mdxContent h2 {
+  font-size: 4rem;
+}
