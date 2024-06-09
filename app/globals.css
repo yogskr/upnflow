@@ -17,10 +17,8 @@
 
 /* Global Style */
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 /* General Style */
@@ -28,17 +26,52 @@ a:hover {
   transition: all 0.4s ease-in-out;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+p,
+li {
+  line-height: 1.5;
+}
+
 /* Main Content -- Main Page and Footer */
 .mainContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3.7rem 5rem 3rem 5rem;
   margin-left: 30rem;
-  padding: 3rem 5rem 3rem 5rem;
   min-height: 100vh;
   font-size: 1.2rem;
   background-color: var(--text-white);
 }
 
+/* Footer */
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+footer p {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+}
+
 /* header */
-.headerContainer {
+header {
   position: fixed;
   background-color: var(--bg-black);
   width: 30rem;

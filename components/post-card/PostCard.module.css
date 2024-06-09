@@ -6,6 +6,11 @@
   flex-direction: column;
 }
 
+.title {
+  padding: 0;
+  margin: 0;
+}
+
 .meta {
   display: flex;
   flex-direction: row;
@@ -14,13 +19,14 @@
   margin-top: 0.5rem;
 }
 
-.excerpt {
+.description {
   margin: 1.5rem 0 1.5rem 0;
 }
 
 .readMore > a:visited,
+.readMore > a:active,
 .author:visited {
-  color: var(--bg-black);
+  color: var(--text-black);
 }
 
 .readMore {
@@ -43,12 +49,13 @@
   gap: 0.5rem;
 }
 
-.author {
-  font-weight: 600;
-}
-
 .author:hover {
   text-decoration: underline var(--text-green);
   color: var(--text-green);
   transition: all 0.4s ease-in-out;
+}
+
+.date {
+  padding: 0;
+  margin: 0;
 }
