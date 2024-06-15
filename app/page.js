@@ -11,17 +11,22 @@ export default function Home() {
   // Find all files in the blog directory
   const files = fs.readdirSync(path.join(blogDirs));
   // For each blog found
-  const blogs = files.map((filename) => {
-    // Read the content of that blog
-    const fileContent = fs.readFileSync(path.join(blogDirs, filename), 'utf8');
-    // Extract the metadata from the blog's content
-    const { data: frontMatter } = matter(fileContent);
-    // Return the metadata and page slug
-    return {
-      meta: frontMatter,
-      slug: filename.replace('.mdx', ''),
-    };
-  });
+  const blogs = files
+    .map((filename) => {
+      // Read the content of that blog
+      const fileContent = fs.readFileSync(
+        path.join(blogDirs, filename),
+        'utf8'
+      );
+      // Extract the metadata from the blog's content
+      const { data: frontMatter } = matter(fileContent);
+      // Return the metadata and page slug
+      return {
+        meta: frontMatter,
+        slug: filename.replace('.mdx', ''),
+      };
+    })
+    .sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date));
 
   return (
     <main>
