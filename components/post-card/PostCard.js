@@ -1,36 +1,16 @@
 import Link from 'next/link';
 import styles from './PostCard.module.css';
+import PostInfo from '../post-info/PostInfo';
 
 export default function PostCard({ post }) {
   return (
     <section className={styles.card}>
       <h2 className={styles.title}>{post.meta.title}</h2>
-      <article className={styles.meta}>
-        <span className={styles.authorContainer}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            height="22px"
-            width="22px"
-            fill="currentColor">
-            <path d="M399 384.2C376.9 345.8 335.4 320 288 320H224c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z" />
-          </svg>
-          <Link href={'/about'} className={styles.author}>
-            {post.meta.author}
-          </Link>
-        </span>
-        <span className={styles.dateContainer}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 512"
-            height="22px"
-            width="22px"
-            fill="currentColor">
-            <path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm80 64c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16h96c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H80z" />
-          </svg>
-          <p className={styles.date}>{post.meta.date}</p>
-        </span>
-      </article>
+      <PostInfo
+        author={post.meta.author}
+        date={post.meta.date}
+        showReadingTime={false}
+      />
       <p className={styles.description}>{post.meta.description}</p>
       <span className={styles.readMore}>
         <svg
