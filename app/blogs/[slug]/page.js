@@ -141,7 +141,7 @@ export async function generateMetadata({ params }) {
   const blog = getPostBySlug(slug);
 
   return {
-    title: blog.frontMatter.title,
+    title: `upnflow | ${blog.frontMatter.title}`,
     description: blog.frontMatter.description,
   };
 }
