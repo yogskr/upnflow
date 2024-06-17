@@ -1,0 +1,33 @@
+.meta {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.postInfoContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.author > a:visited,
+.author > a:link,
+.author > a:active {
+  color: var(--text-black);
+}
+
+.author > a:hover {
+  text-decoration: underline var(--text-green);
+  color: var(--text-green);
+  transition: all 0.4s ease-in-out;
+}
+
+.author,
+.date,
+.readingTime {
+  padding: 0;
+  margin: 0;
+}
