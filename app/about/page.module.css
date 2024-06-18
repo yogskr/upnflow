@@ -1,0 +1,26 @@
+.aboutTitle {
+  font-size: 4.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--text-gray);
+}
+
+.aboutContainer {
+  margin-left: 30rem;
+}
+
+.aboutUs {
+  font-size: 2rem;
+}
+
+.ourMission {
+  margin-top: 3rem;
+  font-size: 2rem;
+}
+
+.aboutParagraph {
+  line-height: 2.5rem;
+}
+
+.upnflow {
+  font-weight: 600;
+}
