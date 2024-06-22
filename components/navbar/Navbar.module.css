@@ -30,6 +30,7 @@
   padding-bottom: 2rem;
 }
 
+.navLinks > a,
 .navLinks > a:visited,
 .navLinks > a:active {
   color: var(--text-white);
@@ -46,16 +47,16 @@
   display: flex;
 }
 
-.emailInput {
+.searchInput {
   border: none;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
   font-size: 1.2rem;
   outline: none;
   background-color: var(--bg-white);
   width: 70%;
 }
 
-.emailBtn {
+.searchBtn {
   border: none;
   padding: 0.5rem;
   font-size: 1.2rem;
@@ -66,13 +67,13 @@
   width: 30%;
 }
 
-.emailBtn:hover {
+.searchBtn:hover {
   background-color: var(--bg-green);
   transition: all 0.4s ease-in-out;
 }
 
 /* Media Query Mobile */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .container {
     width: 100%;
     padding: 2rem;
@@ -94,4 +95,4 @@
   .emailInput {
     margin-right: 0;
   }
-}
+} */
