@@ -16,6 +16,7 @@
   margin: 0 0 1.5rem 0;
 }
 
+.readMore > a,
 .readMore > a:visited,
 .readMore > a:active,
 .author:visited {
