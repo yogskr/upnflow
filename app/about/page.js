@@ -21,17 +21,17 @@ export default function AboutPage() {
         </figure>
         <section className={styles.aboutContent}>
           <div>
-            <h3 className={styles.aboutUs}>Hi, there</h3>
+            <h3 className={styles.aboutUs}>Hi, there!</h3>
             <p className={styles.aboutParagraph}>
               I'm Yoga, the author and creator of upnflow. I'm a experienced
               content writer who dabbles in web development. I build this
               website as a way to share my passion for writing and technology.
             </p>
+            <br />
+            <p>I have a knack for tweaking Linux to make it more</p>
           </div>
           <div>
-            <h3 className={styles.ourMission}>
-              What you can expect from upnflow
-            </h3>
+            <h3 className={styles.ourMission}>What to expect</h3>
             <p className={styles.aboutParagraph}>
               I post content about all things related to internet technology.
               You will find tutorials, reviews, and more. Whether you're looking
