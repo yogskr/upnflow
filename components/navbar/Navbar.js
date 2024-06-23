@@ -10,14 +10,14 @@ export default function Navbar() {
       path: '/about',
     },
     {
-      id: 'contact',
-      title: 'contact',
-      path: '/contact',
-    },
-    {
       id: 'services',
       title: 'services',
       path: '/services',
+    },
+    {
+      id: 'contact',
+      title: 'contact',
+      path: '/contact',
     },
   ];
 
@@ -39,15 +39,17 @@ export default function Navbar() {
             );
           })}
         </div>
-        <form action="#" className={styles.form}>
+        <form action="/search" method="get" className={styles.form}>
           <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="your email address"
-            className={styles.emailInput}
+            type="text"
+            name="query"
+            id="text"
+            placeholder="search articles..."
+            className={styles.searchInput}
           />
-          <input type="button" value="subscribe" className={styles.emailBtn} />
+          <button type="submit" className={styles.searchBtn}>
+            search
+          </button>
         </form>
       </div>
     </nav>
