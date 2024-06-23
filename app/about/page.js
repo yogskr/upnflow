@@ -1,26 +1,45 @@
 /* eslint-disable react/no-unescaped-entities */
+import Image from 'next/image';
 import styles from './page.module.css';
 
 export default function AboutPage() {
   return (
     <>
-      <h2 className={styles.aboutTitle}>Who we are</h2>
+      <div>
+        <h1 className={styles.aboutTitle}>about upnflow</h1>
+        <h2 className={styles.aboutSubTitle}>Behind the scene</h2>
+      </div>
       <article className={styles.aboutContainer}>
-        <h3 className={styles.aboutUs}>About us</h3>
-        <p className={styles.aboutParagraph}>
-          upnflow is a blog site created and developed by Yoga Krisanta, an SEO
-          content writer who dabbles in the world of web development. His
-          passion is to share his knowledge and insights with others, hence the
-          tagline "Learn and Grow".
-        </p>
-        <h3 className={styles.ourMission}>Our mission</h3>
-        <p className={styles.aboutParagraph}>
-          We provide you with a wide range of resources on the internet
-          technolgy, including web development, artificial intelligence, and
-          operating systems. You will find tutorials, reviews, and more. Whether
-          you're looking for a quick refresher, new ideas, or just want to stay
-          up-to-date on the latest trends, we've got you covered.
-        </p>
+        <figure className={styles.photoContainer}>
+          <Image
+            src={'/yogs-edited.png'}
+            alt="profile picture"
+            width={300}
+            height={559}
+            priority={true}
+          />
+        </figure>
+        <section className={styles.aboutContent}>
+          <div>
+            <h3 className={styles.aboutUs}>Hi, there</h3>
+            <p className={styles.aboutParagraph}>
+              I'm Yoga, the author and creator of upnflow. I'm a experienced
+              content writer who dabbles in web development. I build this
+              website as a way to share my passion for writing and technology.
+            </p>
+          </div>
+          <div>
+            <h3 className={styles.ourMission}>
+              What you can expect from upnflow
+            </h3>
+            <p className={styles.aboutParagraph}>
+              I post content about all things related to internet technology.
+              You will find tutorials, reviews, and more. Whether you're looking
+              for a quick refresher, new ideas, or just want to stay up-to-date
+              on the latest trends, I've got you covered.
+            </p>
+          </div>
+        </section>
       </article>
     </>
   );
