@@ -27,8 +27,11 @@ export default function AboutPage() {
               content writer who dabbles in web development. I build this
               website as a way to share my passion for writing and technology.
             </p>
-            <br />
-            <p>I have a knack for tweaking Linux to make it more</p>
+            <p className={styles.aboutParagraph}>
+              I have a knack for exploring and tweaking my operating system,
+              Linux Mint, to make it more me. I also like making music and
+              gaming on my trusted Nintendo Switch.
+            </p>
           </div>
           <div>
             <h3 className={styles.ourMission}>What to expect</h3>
