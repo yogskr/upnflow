@@ -1,20 +1,21 @@
 .aboutTitle {
-  font-size: 4.5rem;
+  color: var(--text-gray);
+  font-size: 1.75rem;
+}
+
+.aboutSubTitle {
+  font-size: 3rem;
   padding-bottom: 1rem;
   border-bottom: 2px solid var(--text-gray);
 }
 
-.aboutContainer {
-  margin-left: 30rem;
-}
-
-.aboutUs {
-  font-size: 2rem;
+.aboutUs,
+.ourMission {
+  font-size: 1.75rem;
 }
 
 .ourMission {
   margin-top: 3rem;
-  font-size: 2rem;
 }
 
 .aboutParagraph {
@@ -23,4 +24,24 @@
 
 .upnflow {
   font-weight: 600;
+}
+
+.photoContainer {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-right: 2px solid var(--text-gray);
+}
+
+.aboutContainer {
+  display: flex;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 5rem;
 }
