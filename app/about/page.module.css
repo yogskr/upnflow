@@ -12,14 +12,16 @@
 .aboutUs,
 .ourMission {
   font-size: 1.75rem;
+  margin-top: 1.25rem;
 }
 
-.ourMission {
-  margin-top: 3rem;
-}
-
-.aboutParagraph {
+.aboutParagraph,
+.aboutParagraphTwo {
   line-height: 2.5rem;
+}
+
+.aboutParagraphTwo {
+  font-style: italic;
 }
 
 .upnflow {
@@ -28,20 +30,23 @@
 
 .photoContainer {
   margin: 0;
-  padding: 0;
-  width: 100%;
+  padding: 0 5rem 0 3rem;
+  width: fit-content;
   display: flex;
   justify-content: center;
+  align-items: center;
   border-right: 2px solid var(--text-gray);
 }
 
 .aboutContainer {
   display: flex;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .aboutContent {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  margin-left: 5rem;
+  padding: 0 3rem 0 5rem;
 }
