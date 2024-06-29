@@ -23,23 +23,26 @@ export default function AboutPage() {
           <div>
             <h3 className={styles.aboutUs}>Hi, there!</h3>
             <p className={styles.aboutParagraph}>
-              I'm Yoga, the author and creator of upnflow. I'm a experienced
-              content writer who dabbles in web development. I build this
-              website as a way to share my passion for writing and technology.
+              I'm Yoga, the one-man team behind upnflow. I bring a unique blend
+              of skills to this blog site, being both a content writer and a
+              front-end web developer. This website is a testament to my passion
+              for writing and technology.
             </p>
-            <p className={styles.aboutParagraph}>
-              I have a knack for exploring and tweaking my operating system,
-              Linux Mint, to make it more me. I also like making music and
-              gaming on my trusted Nintendo Switch.
+            <p className={styles.aboutParagraphTwo}>
+              I find solace in personalizing my operating system, Linux Mint, to
+              reflect my aesthetic preferences. Music is another part of me, and
+              I enjoy exploring various genres, from the soothing melodies of
+              jazz and LoFi to the energetic beats of progressive rock and
+              blues.
             </p>
           </div>
           <div>
             <h3 className={styles.ourMission}>What to expect</h3>
             <p className={styles.aboutParagraph}>
-              I post content about all things related to internet technology.
+              I post content about everything related to Internet technology.
               You will find tutorials, reviews, and more. Whether you're looking
-              for a quick refresher, new ideas, or just want to stay up-to-date
-              on the latest trends, I've got you covered.
+              for a quick refresher, new ideas, or want to stay up-to-date on
+              the latest trends, I've got you covered.
             </p>
           </div>
         </section>
