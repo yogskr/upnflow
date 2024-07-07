@@ -82,6 +82,7 @@ footer p {
 /* MDX File Styling */
 .featuredImage {
   width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
