@@ -1,7 +1,5 @@
 .mdxContent {
-  border-bottom: 2px solid var(--text-gray);
-  padding-bottom: 5rem;
-  margin-bottom: 1.7rem;
+  padding: 0 8rem 5rem 8rem;
 }
 
 .title {
@@ -17,7 +15,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 4rem;
+  border-bottom: 2px solid var(--text-gray);
+  padding-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .pagination {
