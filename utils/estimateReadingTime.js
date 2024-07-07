@@ -1,6 +1,6 @@
-export function estimateReadingTime(text) {
-  const wordsPerMinute = 200;
-  const words = text.split(/\s+/).length;
-  const readingTime = Math.ceil(words / wordsPerMinute);
-  return readingTime;
+export function estimateReadingTime(content) {
+  const wordsPerMinute = 200; // Average reading speed
+  const words = content.split(/\s+/).length;
+  const time = Math.ceil(words / wordsPerMinute);
+  return time;
 }

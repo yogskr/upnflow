@@ -1,3 +1,4 @@
+// app/blogs/[slug]/page.js
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -25,11 +26,13 @@ export async function generateStaticParams() {
         'utf8'
       );
 
-      const { data: frontMatter } = matter(markdownFile);
+      const { data: frontMatter, content } = matter(markdownFile);
+      const readingTime = estimateReadingTime(content);
 
       return {
         slug: fileName.replace('.mdx', ''),
         date: frontMatter.date,
+        readingTime,
       };
     })
     .sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -45,8 +48,8 @@ function getPostBySlug(slug) {
   );
 
   const { data: frontMatter, content } = matter(markdownFile);
-
   const readingTime = estimateReadingTime(content);
+  console.log(`Reading time for ${slug}: ${readingTime}`);
 
   return {
     frontMatter,
@@ -72,11 +75,13 @@ export default function Post({ params }) {
         'utf8'
       );
 
-      const { data: frontMatter } = matter(markdownFile);
+      const { data: frontMatter, content } = matter(markdownFile);
+      const readingTime = estimateReadingTime(content);
 
       return {
         slug: fileName.replace('.mdx', ''),
         date: frontMatter.date,
+        readingTime,
       };
     })
     .sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -88,49 +93,52 @@ export default function Post({ params }) {
 
   return (
     <Suspense fallback={<p>Loading blog post...</p>}>
-      <article className={styles.mdxContent}>
+      <div>
         <h1 className={styles.title}>{props.frontMatter.title}</h1>
+        {/* Subtitle */}
         <PostInfo
           author={props.frontMatter.author}
           date={props.frontMatter.date}
           readingTime={props.readingTime}
           showReadingTime={true}
         />
+      </div>
+      <article className={styles.mdxContent}>
         <MDXRemote source={props.content} components={components} />
-        <nav className={styles.navigation}>
-          {previousBlog ? (
-            <span className={styles.pagination}>
-              <Image
-                src={'/post-previous.svg'}
-                alt="Previous icon"
-                width={22}
-                height={22}
-              />
-              <Link href={`/blogs/${previousBlog.slug}`}>Previous Post</Link>
-            </span>
-          ) : null}
+      </article>
+      <nav className={styles.navigation}>
+        {previousBlog ? (
           <span className={styles.pagination}>
             <Image
-              src={'/post-home.svg'}
-              alt="Home icon"
+              src={'/post-previous.svg'}
+              alt="Previous icon"
               width={22}
               height={22}
             />
-            <Link href={'/'}>Home</Link>
+            <Link href={`/blogs/${previousBlog.slug}`}>Previous Post</Link>
           </span>
-          {nextBlog ? (
-            <span className={styles.pagination}>
-              <Link href={`/blogs/${nextBlog.slug}`}>Next Post</Link>
-              <Image
-                src={'/post-next.svg'}
-                alt="Next icon"
-                width={22}
-                height={22}
-              />
-            </span>
-          ) : null}
-        </nav>
-      </article>
+        ) : null}
+        <span className={styles.pagination}>
+          <Image
+            src={'/post-home.svg'}
+            alt="Home icon"
+            width={22}
+            height={22}
+          />
+          <Link href={'/'}>Home</Link>
+        </span>
+        {nextBlog ? (
+          <span className={styles.pagination}>
+            <Link href={`/blogs/${nextBlog.slug}`}>Next Post</Link>
+            <Image
+              src={'/post-next.svg'}
+              alt="Next icon"
+              width={22}
+              height={22}
+            />
+          </span>
+        ) : null}
+      </nav>
     </Suspense>
   );
 }
