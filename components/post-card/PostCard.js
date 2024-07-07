@@ -1,16 +1,11 @@
+// components/post-card/PostCard.js
 import Link from 'next/link';
 import styles from './PostCard.module.css';
-import PostInfo from '../post-info/PostInfo';
 
 export default function PostCard({ post }) {
   return (
     <section className={styles.card}>
       <h2 className={styles.title}>{post.meta.title}</h2>
-      <PostInfo
-        author={post.meta.author}
-        date={post.meta.date}
-        showReadingTime={false}
-      />
       <p className={styles.description}>{post.meta.description}</p>
       <span className={styles.readMore}>
         <svg
