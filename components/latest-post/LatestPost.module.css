@@ -1,0 +1,19 @@
+.postContainer {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+.postDesc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.postTitle {
+  font-size: 2.2rem;
+}
+
+.postImage {
+  border-radius: 10px;
+}
