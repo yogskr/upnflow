@@ -1,37 +1,19 @@
 .card {
-  border-bottom: 2px solid var(--text-gray);
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
+  border: 1px solid var(--bg-black);
+  box-shadow: 3px 3px 0px 0.5px var(--bg-black);
+  padding: 2rem;
+  margin-bottom: 3.5rem;
   display: flex;
+  gap: 1.5rem;
   flex-direction: column;
+  width: 48%;
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   padding: 0;
-  margin: 0 0 2rem 0;
 }
 
-.description {
+/* .description {
   margin: 0 0 1.5rem 0;
-}
-
-.readMore > a,
-.readMore > a:visited,
-.readMore > a:active,
-.author:visited {
-  color: var(--text-black);
-}
-
-.readMore {
-  font-weight: 600;
-  align-self: flex-end;
-  display: flex;
-  gap: 10px;
-}
-
-.readMore > a:hover {
-  text-decoration: underline var(--text-orange);
-  color: var(--text-orange);
-  transition: all 0.4s ease-in-out;
-}
+} */
