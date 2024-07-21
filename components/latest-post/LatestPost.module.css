@@ -1,7 +1,13 @@
 .postContainer {
+  margin-bottom: 3.5rem;
+  padding: 2rem;
+  border: 1px solid var(--bg-black);
+  box-shadow: 3px 3px 0px 0.5px var(--bg-black);
+}
+
+.content {
   display: flex;
   gap: 2.5rem;
-  margin-bottom: 5rem;
 }
 
 .postDesc {
@@ -11,9 +17,25 @@
 }
 
 .postTitle {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
 }
 
-.postImage {
-  border-radius: 10px;
+.postTitle a,
+.postTitle a:visited,
+.postTitle a:active {
+  color: var(--text-black);
+}
+
+.postTitle a:hover {
+  text-decoration: underline;
+}
+
+.latestPostTag {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  border: 2px solid var(--bg-black);
+  width: fit-content;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  background-color: var(--bg-black);
+  color: var(--text-white);
 }
