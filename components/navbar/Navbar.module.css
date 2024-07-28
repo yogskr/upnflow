@@ -1,14 +1,18 @@
 .container {
   min-height: inherit;
-  padding: 3rem;
+  padding: 3.2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+.logo {
+  margin: 0;
+}
+
 .logo > a {
   color: var(--text-white);
-  font-size: 2.3rem;
+  font-size: 2rem;
 }
 
 .logo > a:hover {
@@ -25,7 +29,7 @@
 .navLinks {
   display: flex;
   flex-direction: column;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 800;
   padding-bottom: 2rem;
 }

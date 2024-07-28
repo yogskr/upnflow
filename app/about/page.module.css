@@ -9,13 +9,14 @@
   border-bottom: 2px solid var(--text-gray);
 }
 
-.aboutUs,
-.ourMission {
-  font-size: 1.75rem;
+.aboutUs {
+  font-size: 2.5rem;
+  margin-top: 19.2px;
 }
 
 .ourMission {
-  margin-top: 3rem;
+  font-size: 2.5rem;
+  margin-top: 2rem;
 }
 
 .aboutParagraph {
@@ -32,6 +33,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   border-right: 2px solid var(--text-gray);
 }
 

@@ -89,13 +89,15 @@ export default function Post({ params }) {
   return (
     <Suspense fallback={<p>Loading blog post...</p>}>
       <article className={styles.mdxContent}>
-        <h1 className={styles.title}>{props.frontMatter.title}</h1>
-        <PostInfo
-          author={props.frontMatter.author}
-          date={props.frontMatter.date}
-          readingTime={props.readingTime}
-          showReadingTime={true}
-        />
+        <div className={styles.header}>
+          <h1 className={styles.title}>{props.frontMatter.title}</h1>
+          <PostInfo
+            author={props.frontMatter.author}
+            date={props.frontMatter.date}
+            readingTime={props.readingTime}
+            showReadingTime={true}
+          />
+        </div>
         <MDXRemote source={props.content} components={components} />
         <nav className={styles.navigation}>
           {previousBlog ? (
