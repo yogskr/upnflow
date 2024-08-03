@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from 'next/image';
 import styles from './page.module.css';
+import Link from 'next/link';
 
 export default function AboutPage() {
   return (
@@ -23,24 +24,29 @@ export default function AboutPage() {
           <div>
             <h3 className={styles.aboutUs}>Hi, I'm Yoga!</h3>
             <p className={styles.aboutParagraph}>
-              The author and creator of upnflow. I'm an experienced content
-              writer who dabbles as a front-end web developer. I build this
-              website as a way to share my passion for writing and web
-              development.
+              The author and creator of{' '}
+              {
+                <Link href="/" className={styles.homepage}>
+                  upnflow
+                </Link>
+              }
+              . A full-time SEO content writer who dabbles as a front-end web
+              developer. I build this website as a way to share my passion for
+              writing and web development.
             </p>
             <p className={styles.aboutParagraph}>
               I have a knack for exploring and tweaking my operating system,
-              Linux Mint, to make it more me. I also like making music and
-              gaming on my trusty Nintendo Switch.
+              Linux Mint, to make it more me. Plus, exploring virtual open
+              worlds like Hyrule, The Continent, and Skyrim is my grand escape.
             </p>
           </div>
           <div>
             <h3 className={styles.ourMission}>What posts do I write?</h3>
             <p className={styles.aboutParagraph}>
               I write about all things related to internet technology. You'll
-              find tutorials, reviews, and more. Whether you're looking for a
+              find tutorials, reviews, and news. So, if you're looking for a
               quick refresher, new ideas, or just want to stay up-to-date on the
-              latest trends, I've got you covered.
+              latest technology trends, I've got you covered.
             </p>
           </div>
         </section>
