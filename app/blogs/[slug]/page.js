@@ -7,6 +7,9 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+// Page transition
+import BlogTransition from '../../../components/blog-pagination-transition/BlogTransition';
+
 import styles from './page.module.css';
 import { estimateReadingTime } from '../../../utils/estimateReadingTime';
 import PostInfo from '../../../components/post-info/PostInfo';
@@ -87,53 +90,58 @@ export default function Post({ params }) {
   const previousBlog = index < blogs.length - 1 ? blogs[index + 1] : null;
 
   return (
-    <Suspense fallback={<p>Loading blog post...</p>}>
-      <article className={styles.mdxContent}>
-        <div className={styles.header}>
-          <h1 className={styles.title}>{props.frontMatter.title}</h1>
-          <PostInfo
-            author={props.frontMatter.author}
-            date={props.frontMatter.date}
-            readingTime={props.readingTime}
-            showReadingTime={true}
-          />
-        </div>
-        <MDXRemote source={props.content} components={components} />
-        <nav className={styles.navigation}>
-          {previousBlog ? (
-            <span className={styles.pagination}>
-              <Image
-                src={'/post-previous.svg'}
-                alt="Previous icon"
-                width={22}
-                height={22}
-              />
-              <Link href={`/blogs/${previousBlog.slug}`}>Previous Post</Link>
-            </span>
-          ) : null}
-          <span className={styles.pagination}>
-            <Image
-              src={'/post-home.svg'}
-              alt="Home icon"
-              width={22}
-              height={22}
+    <BlogTransition>
+      <Suspense fallback={<p>Loading blog post...</p>}>
+        <article className={styles.mdxContent}>
+          {/* Blog content */}
+          <div className={styles.header}>
+            <h1 className={styles.title}>{props.frontMatter.title}</h1>
+            <PostInfo
+              author={props.frontMatter.author}
+              date={props.frontMatter.date}
+              readingTime={props.readingTime}
+              showReadingTime={true}
             />
-            <Link href={'/'}>Home</Link>
-          </span>
-          {nextBlog ? (
+          </div>
+          <MDXRemote source={props.content} components={components} />
+
+          {/* Pagination */}
+          <nav className={styles.navigation}>
+            {previousBlog ? (
+              <span className={styles.pagination}>
+                <Image
+                  src={'/post-previous.svg'}
+                  alt="Previous icon"
+                  width={22}
+                  height={22}
+                />
+                <Link href={`/blogs/${previousBlog.slug}`}>Previous Post</Link>
+              </span>
+            ) : null}
             <span className={styles.pagination}>
-              <Link href={`/blogs/${nextBlog.slug}`}>Next Post</Link>
               <Image
-                src={'/post-next.svg'}
-                alt="Next icon"
+                src={'/post-home.svg'}
+                alt="Home icon"
                 width={22}
                 height={22}
               />
+              <Link href={'/'}>Home</Link>
             </span>
-          ) : null}
-        </nav>
-      </article>
-    </Suspense>
+            {nextBlog ? (
+              <span className={styles.pagination}>
+                <Link href={`/blogs/${nextBlog.slug}`}>Next Post</Link>
+                <Image
+                  src={'/post-next.svg'}
+                  alt="Next icon"
+                  width={22}
+                  height={22}
+                />
+              </span>
+            ) : null}
+          </nav>
+        </article>
+      </Suspense>
+    </BlogTransition>
   );
 }
 
