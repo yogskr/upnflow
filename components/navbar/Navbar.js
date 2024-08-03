@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import styles from './Navbar.module.css';
-import { metadata } from '../../app/layout';
+
+const metadata = {
+  title: 'upnflow',
+  description: 'learn & grow',
+};
 
 export default function Navbar() {
   const navigationMenu = [
