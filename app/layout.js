@@ -5,11 +5,6 @@ import SocialAccount from '../components/social/SocialAccount';
 
 const notoSans = Noto_Sans({ subsets: ['latin'] });
 
-export const metadata = {
-  title: 'upnflow',
-  description: 'learn & grow',
-};
-
 export default function RootLayout({ children }) {
   let header = (
     <header className="headerContainer">
