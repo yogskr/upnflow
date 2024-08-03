@@ -47,3 +47,12 @@
   justify-content: space-evenly;
   margin-left: 5rem;
 }
+
+.homepage {
+  color: initial;
+}
+
+.homepage:hover {
+  color: var(--text-orange);
+  text-decoration: underline var(--text-orange);
+}
