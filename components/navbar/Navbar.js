@@ -1,12 +1,38 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
+import { motion } from 'framer-motion';
 
 const metadata = {
   title: 'upnflow',
   description: 'learn & grow',
 };
 
+const variants = {
+  initial: {
+    x: -25,
+    opacity: 0,
+  },
+  enter: {
+    x: 0,
+    opacity: 1,
+  },
+};
+
 export default function Navbar() {
+  const router = useRouter();
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    const query = event.target.query.value;
+    router.push(`/search?query=${query}`);
+
+    // Clear the input field after submission
+    event.target.query.value = '';
+  };
+
   const navigationMenu = [
     {
       id: 'about',
@@ -26,7 +52,12 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={styles.container}>
+    <motion.nav
+      variants={variants}
+      initial="initial"
+      animate={'enter'}
+      transition={{ ease: 'easeInOut', duration: 0.5, delay: 0.5 }}
+      className={styles.container}>
       <article>
         <h1 className={styles.logo}>
           <Link href="/">{metadata.title}</Link>
@@ -43,7 +74,7 @@ export default function Navbar() {
             );
           })}
         </div>
-        <form action="/search" method="get" className={styles.form}>
+        <form onSubmit={handleSearchSubmit} className={styles.form}>
           <input
             type="text"
             name="query"
@@ -56,6 +87,6 @@ export default function Navbar() {
           </button>
         </form>
       </div>
-    </nav>
+    </motion.nav>
   );
 }
