@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const variants = {
   initial: {
@@ -15,14 +15,13 @@ const variants = {
 
 export default function BlogTransition({ children }) {
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        variants={variants}
-        initial="initial"
-        animate="enter"
-        transition={{ duration: 0.5 }}>
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <motion.div
+      variants={variants}
+      initial="initial"
+      animate="enter"
+      transition={{ duration: 0.5 }}
+    >
+      {children}
+    </motion.div>
   );
 }
