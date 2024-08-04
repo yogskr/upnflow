@@ -1,7 +1,10 @@
+'use client';
+
 /* eslint-disable react/no-unescaped-entities */
 import Image from 'next/image';
 import styles from './page.module.css';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function AboutPage() {
   return (
@@ -20,11 +23,15 @@ export default function AboutPage() {
             priority={true}
           />
         </figure>
-        <section className={styles.aboutContent}>
+        <motion.section
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ ease: 'easeInOut', duration: 0.5, delay: 0.5 }}
+          className={styles.aboutContent}>
           <div>
             <h3 className={styles.aboutUs}>Hi, I'm Yoga!</h3>
             <p className={styles.aboutParagraph}>
-              The author and creator of{' '}
+              The author and creator of
               {
                 <Link href="/" className={styles.homepage}>
                   upnflow
@@ -49,7 +56,7 @@ export default function AboutPage() {
               latest technology trends, I've got you covered.
             </p>
           </div>
-        </section>
+        </motion.section>
       </article>
     </>
   );
