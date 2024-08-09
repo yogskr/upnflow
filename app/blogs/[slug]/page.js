@@ -7,12 +7,12 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Page transition
-import BlogTransition from '../../../components/blog-pagination-transition/BlogTransition';
-
 import styles from './page.module.css';
 import { estimateReadingTime } from '../../../utils/estimateReadingTime';
 import PostInfo from '../../../components/post-info/PostInfo';
+
+// Page transition
+import BlogTransition from '../../../components/blog-pagination-transition/BlogTransition';
 
 const blogsDirectory = path.join('blogs');
 
